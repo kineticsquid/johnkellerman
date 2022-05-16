@@ -1,4 +1,6 @@
 .dockerignore
-.vscode
-.idea
-.readmes
+__pycache__
+.gcloudignore
+.gitignore
+*.sh
+readme.md

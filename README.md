@@ -3,4 +3,5 @@
 1. Converge file systems
 1. Add launch config to run python file locally and test
 1. `Clode Code: Debug on Cloud Run Emulator`: Debug (or Run) image locally
+1. `Cloud Code: Deploy to Cloud Run`: Depoy changes
 
