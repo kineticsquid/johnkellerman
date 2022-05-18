@@ -36,6 +36,9 @@ except FileNotFoundError:
     from datetime import date
     build_stamp = generate_build_stamp()
 print('Running build: %s' % build_stamp)
+print('\nEnvironment Variables:')
+for key in os.environ.keys():
+    print('%s: \t\t%s' % (key, os.environ[key]))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

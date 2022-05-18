@@ -11,4 +11,4 @@ echo "Docker Images..."
 docker images
 
 echo "Now running..."
-./run-image-locally.sh
+./.vscode/run-image-locally.sh
