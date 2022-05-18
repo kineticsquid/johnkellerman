@@ -9,3 +9,6 @@ docker push kineticsquid/johnkellerman:latest
 # list the current images
 echo "Docker Images..."
 docker images
+
+echo "Now running..."
+./run-image-locally.sh
