@@ -1,11 +1,5 @@
 # Python image to use.
-FROM python:3.9
-
-# Keeps Python from generating .pyc files in the container
-ENV PYTHONDONTWRITEBYTECODE=1
-
-# Turns off buffering for easier container logging
-ENV PYTHONUNBUFFERED=1
+FROM python:3.11-alpine
 
 # Set the working directory to /app
 WORKDIR /app
@@ -18,7 +12,9 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Copy the rest of the working directory contents into the container at /app
 COPY . .
+
 RUN date > /app/static/build.txt
 
 # Run app.py when the container launches
-ENTRYPOINT ["python", "app.py"]
+EXPOSE 8080
+CMD ["gunicorn"  , "-b", "0.0.0.0:8080", "wsgi_server:app"]
